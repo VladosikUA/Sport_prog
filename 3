@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <math.h>
+#include <locale.h>
+#include <ctype.h>
+
+int main() {
+    setlocale(LC_ALL, "ukr");
+
+    // 1. Метри → см i мм
+    float meters;
+    printf("Введiть довжину в метрах: ");
+    scanf_s("%f", &meters);
+    printf("Це %.2f сантиметрiв або %.2f мiлiметрiв\n", meters * 100, meters * 1000);
+
+    // 2. Площа кола
+    float radius;
+    printf("\nВведiть радiус кола: ");
+    scanf_s("%f", &radius);
+    float area = 3.14 * radius * radius;
+    printf("Площа кола: %.2f\n", area);
+
+    // 3. Секунди → години, хвилини, секунди
+    int totalSeconds;
+    printf("\nВведiть кiлькiсть секунд: ");
+    scanf_s("%d", &totalSeconds);
+    int hours = totalSeconds / 3600;
+    int minutes = (totalSeconds % 3600) / 60;
+    int seconds = totalSeconds % 60;
+    printf("Це %d год %d хв %d сек\n", hours, minutes, seconds);
+
+    // 4. Перевiрка на парнiсть
+    int number;
+    printf("\nВведiть цiле число: ");
+    scanf_s("%d", &number);
+    if (number % 2 == 0)
+        printf("Число парне\n");
+    else
+        printf("Число непарне\n");
+
+    // 5. Перетворення малої лiтери на велику
+    char ch;
+    printf("\nВведiть малу лiтеру англiйського алфавiту: ");
+    scanf_s(" %c", &ch);
+    if (ch >= 'a' && ch <= 'z')
+        printf("Велика лiтера: %c\n", ch - ('a' - 'A'));
+    else
+        printf("Це не мала лiтера англiйського алфавiту!\n");
+
+    return 0;
+}
