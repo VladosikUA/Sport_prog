@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <math.h>
+#include <locale.h>
+#include <string.h>
+
+int main() {
+    setlocale(LC_ALL, ""); 
+    // Завдання 1: Цiна гри зi знижкою
+    int price = 450;
+    int discount = 15;
+    int final_price = price - (price * discount / 100);
+    printf("1) Цiна гри зi знижкою: %d грн\n", final_price);
+
+    // Завдання 2: Обчислення вiку
+    int birth_year;
+    printf("\n2) Введiть рiк народження: ");
+    scanf_s("%d", &birth_year);
+    int age = 2025 - birth_year;
+    printf("Ваш вiк: %d рокiв\n", age);
+
+    // Завдання 3: Вiдстань мiж двома точками
+    double x1, y1, x2, y2;
+    printf("\n3) Введiть координати першої точки (x1 y1): ");
+    scanf_s("%lf %lf", &x1, &y1);
+    printf("Введiть координати другої точки (x2 y2): ");
+    scanf_s("%lf %lf", &x2, &y2);
+    double distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+    printf("Вiдстань мiж точками: %.2f\n", distance);
+
+    // Завдання 4: Кiнцева вартiсть товару пiсля знижки
+    double user_price, user_discount;
+    printf("\n4) Введiть вартiсть товару: ");
+    scanf_s("%lf", &user_price);
+    printf("Введiть знижку (у %%): ");
+    scanf_s("%lf", &user_discount);
+    double user_final_price = user_price * (1 - user_discount / 100);
+    printf("Кiнцева вартiсть товару: %.2f грн\n", user_final_price);
+
+    // Завдання 5: Сума цифр тризначного числа
+    int number;
+    printf("\n5) Введiть тризначне число: ");
+    scanf_s("%d", &number);
+    int digit_sum = (number / 100) + (number / 10 % 10) + (number % 10);
+    printf("Сума цифр: %d\n", digit_sum);
+    return 0;
+}
