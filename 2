@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    setlocale(LC_ALL, "ukr");
+
+    // 1. Поділ 5 на 2 як float
+    int a = 5, b = 2;
+    float result = (float)a / b;
+    printf("Результат ділення 5 на 2: %.2f\n", result);
+
+    // 2. Константна змінна типу float
+    const float PI = 3.14f;
+    printf("Константа PI = %.2f\n", PI);
+
+    // 3. Змінна char та її ASCII-код
+    char ch = 'A';
+    printf("Символ: %c, ASCII-код: %d\n", ch, ch);
+
+    // 4. Ввід цілого і дробового числа та вивід суми
+    int intNum;
+    float floatNum;
+    printf("Введіть ціле число: ");
+    scanf("%d", &intNum);
+    printf("Введіть дробове число: ");
+    scanf("%f", &floatNum);
+    float sum = intNum + floatNum;
+    printf("Сума чисел: %.2f\n", sum);
+
+    // 5. Ввід символа та вивід наступного символа
+    char inputChar;
+    printf("Введіть символ: ");
+    scanf(" %c", &inputChar); // пробіл перед %c важливий
+    printf("Наступний символ у ASCII: %c\n", inputChar + 1);
+
+    return 0;
